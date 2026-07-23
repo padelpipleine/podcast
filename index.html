@@ -148,6 +148,31 @@
     60% { transform: scale(0.95) rotate(2deg); }
   }
 
+  /* ---------- Brand lockup (tBoP logomark, recolor via CSS color) ---------- */
+  .brand {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .brand .logomark {
+    font-family: var(--display);
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    transition: color 200ms var(--ease);
+  }
+  .brand .brand-by {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    white-space: nowrap;
+  }
+  .brand:hover .logomark { color: var(--indigo); }
+
   /* ---------- Top bar ---------- */
   .topbar {
     position: fixed;
@@ -590,11 +615,9 @@
 
 <!-- ============ TOP BAR ============ -->
 <div class="topbar" id="topbar">
-  <a class="pill" href="https://padelpipeline.com" aria-label="Padel Pipeline">
-    <svg class="flame" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 2c2.6 4.2-4.6 6.5-4.6 12A6.6 6.6 0 0 0 20.6 14c0-2.4-1.1-4.3-2.4-5.6-.2 1.9-1.1 2.9-2 3.2C17.8 8.4 15.9 4.4 12 2Z" fill="#F480D3"/>
-    </svg>
-    Padel Pipeline
+  <a class="brand" href="https://padelpipeline.com" aria-label="The Business of Padel, by Padel Pipeline">
+    <span class="logomark">tBoP</span>
+    <span class="brand-by">by Padel Pipeline</span>
   </a>
   <div class="topbar-ep">
     <span class="mono tight" aria-hidden="true">EP&middot;01&#8594;&#8734;</span>
