@@ -127,27 +127,21 @@
   }
   .mono.tight { letter-spacing: 0.08em; }
 
-  /* ---------- Pill badge ---------- */
-  .pill {
+  /* ---------- Padel Pipeline logo lockup ---------- */
+  .pp-logo {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 10px 20px 10px 14px;
-    background: transparent;
-    font-family: var(--sans);
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.01em;
+    gap: 12px;
     white-space: nowrap;
   }
-  .pill svg { display: block; }
-  .pill .flame { animation: flicker 2.6s ease-in-out infinite; transform-origin: 50% 90%; }
-  @keyframes flicker {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    30% { transform: scale(1.08) rotate(-2deg); }
-    60% { transform: scale(0.95) rotate(2deg); }
+  .pp-logo svg { display: block; }
+  .pp-logo .pp-word {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--ink);
   }
 
   /* ---------- Brand lockup (tBoP logomark, recolor via CSS color) ---------- */
@@ -448,7 +442,6 @@
   /* ---------- Guests (night) ---------- */
   .night { background: var(--ink); color: var(--cream-on-ink); }
   .night .mono { color: var(--dim-on-ink); }
-  .night .pill { border-color: rgba(241, 238, 229, 0.28); color: var(--cream-on-ink); }
 
   .guest-row {
     position: relative;
@@ -604,7 +597,7 @@
     html.js .reveal { opacity: 1; transform: none; transition: none; }
     .mega .row > span { transform: none; animation: none; }
     .marquee.animate { animation: none; }
-    .pill .flame, .hero-ticker-note .bar { animation: none; }
+    .hero-ticker-note .bar { animation: none; }
     .btn, .guest-row, .topbar { transition: none; }
   }
 
@@ -903,12 +896,26 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap foot-grid">
-    <span class="pill">
-      <svg class="flame" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2c2.6 4.2-4.6 6.5-4.6 12A6.6 6.6 0 0 0 20.6 14c0-2.4-1.1-4.3-2.4-5.6-.2 1.9-1.1 2.9-2 3.2C17.8 8.4 15.9 4.4 12 2Z" fill="#F480D3"/>
+    <a class="pp-logo" href="https://padelpipeline.com" aria-label="Padel Pipeline">
+      <svg width="30" height="33" viewBox="0 0 100 110" fill="none" aria-hidden="true">
+        <path d="M50 2 L95 28 V82 L50 108 L5 82 V28 Z" fill="#5A45F5"/>
+        <path d="M50 16 L83 35 V75 L50 94 L17 75 V35 Z" fill="#F1EEE5"/>
+        <g stroke="#F1EEE5" stroke-width="7">
+          <line x1="50" y1="2" x2="50" y2="20"/>
+          <line x1="5" y1="82" x2="21" y2="72"/>
+          <line x1="95" y1="82" x2="79" y2="72"/>
+        </g>
+        <path d="M50 26 L74 40 L50 54 L26 40 Z" fill="#F9A8E4"/>
+        <path d="M26 40 L50 54 V82 L26 68 Z" fill="#F480D3"/>
+        <path d="M74 40 L50 54 V82 L74 68 Z" fill="#E762C4"/>
+        <g stroke="#F1EEE5" stroke-width="4" stroke-linejoin="round" fill="none">
+          <path d="M50 26 L74 40 L50 54 L26 40 Z"/>
+          <path d="M26 40 L50 54 V82 L26 68 Z"/>
+          <path d="M74 40 L50 54 V82 L74 68 Z"/>
+        </g>
       </svg>
-      Padel Pipeline
-    </span>
+      <span class="pp-word">Padel Pipeline</span>
+    </a>
     <p class="foot-note">The Business of Padel is made by Padel Pipeline, the growth partner building commercial infrastructure for padel clubs, brands, events and tech providers.</p>
     <a class="foot-link" href="https://padelpipeline.com">padelpipeline.com</a>
   </div>
