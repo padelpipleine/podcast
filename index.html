@@ -668,7 +668,7 @@
         <!-- TODO: wire form action to your email tool (Beehiiv / Mailerlite etc.) -->
         <form class="capture-form" onsubmit="return captureSubmit(event, 'capture-top')">
           <label for="email-top" style="position:absolute;left:-9999px;">Email address</label>
-          <input id="email-top" type="email" required placeholder="YOU@YOURCLUB.COM" autocomplete="email">
+          <input id="email-top" type="email" required placeholder="YOUR@EMAIL.COM" autocomplete="email">
           <button type="submit" class="btn">Get episodes first <span class="arr" aria-hidden="true">&#8594;</span></button>
         </form>
         <p class="note">ONE EMAIL PER EPISODE. NOTHING ELSE.</p>
@@ -874,7 +874,7 @@
       <div class="capture reveal d1" id="capture-bottom">
         <form class="capture-form" onsubmit="return captureSubmit(event, 'capture-bottom')">
           <label for="email-bottom" style="position:absolute;left:-9999px;">Email address</label>
-          <input id="email-bottom" type="email" required placeholder="YOU@YOURCLUB.COM" autocomplete="email">
+          <input id="email-bottom" type="email" required placeholder="YOUR@EMAIL.COM" autocomplete="email">
           <button type="submit" class="btn">Get episodes first <span class="arr" aria-hidden="true">&#8594;</span></button>
         </form>
         <p class="note">ONE EMAIL PER EPISODE. NOTHING ELSE.</p>
@@ -922,13 +922,23 @@
 </footer>
 
 <script>
-  // Email capture: front-end state only. Wire the fetch() below to your list tool.
+  // Email capture -> Google Form (responses land in the linked Google Sheet).
+  // Set both constants below; leave empty to fall back to front-end-only state.
+  var GFORM_ID = '';        // from the form URL: docs.google.com/forms/d/e/<THIS>/viewform
+  var GFORM_ENTRY = '';     // the email question's field name, e.g. 'entry.123456789'
   function captureSubmit(e, id) {
     e.preventDefault();
     var box = document.getElementById(id);
     var email = box.querySelector('input[type="email"]').value;
-    // TODO: send to your email provider, e.g.:
-    // fetch('YOUR_ENDPOINT', { method: 'POST', body: JSON.stringify({ email: email }) });
+    if (GFORM_ID && GFORM_ENTRY) {
+      var data = new FormData();
+      data.append(GFORM_ENTRY, email);
+      fetch('https://docs.google.com/forms/d/e/' + GFORM_ID + '/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      }).catch(function () {});
+    }
     box.classList.add('done');
     return false;
   }
