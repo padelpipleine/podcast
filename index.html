@@ -484,8 +484,19 @@
     margin-top: 10px;
   }
   .guest-row .role b { color: var(--pink); font-weight: 500; }
-  .guest-row .role a { border-bottom: 1px solid transparent; transition: border-color 200ms var(--ease); }
-  .guest-row .role a:hover { border-color: var(--pink); }
+  .guest-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; }
+  .guest-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim-on-ink);
+    border-bottom: 1px solid rgba(241, 238, 229, 0.25);
+    padding-bottom: 1px;
+    transition: color 200ms var(--ease), border-color 200ms var(--ease);
+  }
+  .guest-links a:hover { color: var(--pink); border-color: var(--pink); }
   .guest-row .hook { color: var(--dim-on-ink); font-size: 16px; max-width: 44ch; }
   .guest-row .go {
     font-family: var(--mono);
@@ -743,6 +754,10 @@
         <div>
           <h3 class="name">Scott Colebourne</h3>
           <p class="role"><b>USA Padel</b> &middot; President</p>
+          <p class="guest-links">
+            <a href="https://www.linkedin.com/in/scottcolebourne/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+            <a href="https://padelusa.org/" target="_blank" rel="noopener">padelusa.org &#8599;</a>
+          </p>
         </div>
         <p class="hook">The market everyone in Europe is watching, from the man running its governing body.</p>
         <span class="go" aria-hidden="true">&#8594;</span>
@@ -753,6 +768,9 @@
         <div>
           <h3 class="name">Jose Luis &ldquo;El Negro&rdquo; Gonz&aacute;lez</h3>
           <p class="role"><b>Hexagon Cup &middot; Premier Padel</b> &middot; The voice of padel's biggest events</p>
+          <p class="guest-links">
+            <a href="https://www.instagram.com/elnegrogonzalez77/" target="_blank" rel="noopener">Instagram &#8599;</a>
+          </p>
         </div>
         <p class="hook">What the crowd never sees, from the man on the mic at the sport's biggest nights.</p>
         <span class="go" aria-hidden="true">&#8594;</span>
@@ -761,30 +779,42 @@
       <article class="guest-row reveal d2">
         <span class="ep-num">EP&middot;03</span>
         <div>
-          <h3 class="name">Laura Guti&eacute;rrez</h3>
-          <p class="role"><b>Mejorset</b> &middot; Premium padel courts</p>
-        </div>
-        <p class="hook">What it takes to build the courts the sport is played on, and sell them worldwide.</p>
-        <span class="go" aria-hidden="true">&#8594;</span>
-      </article>
-
-      <article class="guest-row reveal d3">
-        <span class="ep-num">EP&middot;04</span>
-        <div>
           <h3 class="name">Basim Abdullah</h3>
           <p class="role"><b>Premier Padel League Pakistan</b> &middot; League founder</p>
+          <p class="guest-links">
+            <a href="https://www.linkedin.com/in/basim-ahmed-abdullah-ba3810254/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+            <a href="https://premierpadelleague.pk/" target="_blank" rel="noopener">premierpadelleague.pk &#8599;</a>
+          </p>
         </div>
         <p class="hook">Building a professional league where no playbook exists.</p>
         <span class="go" aria-hidden="true">&#8594;</span>
       </article>
 
       <article class="guest-row reveal d3">
-        <span class="ep-num">EP&middot;05</span>
+        <span class="ep-num">EP&middot;04</span>
         <div>
           <h3 class="name">Leonel Fern&aacute;ndez</h3>
-          <p class="role"><a href="https://mexicowaves.shop/" target="_blank" rel="noopener"><b>Mexico Waves</b></a> &middot; CEO, pro padel team</p>
+          <p class="role"><b>Mexico Waves</b> &middot; CEO, pro padel team</p>
+          <p class="guest-links">
+            <a href="https://www.linkedin.com/in/leonel-fern%C3%A1ndez-del-campo-rabatte-0416105b/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+            <a href="https://mexicowaves.shop/" target="_blank" rel="noopener">mexicowaves.shop &#8599;</a>
+          </p>
         </div>
         <p class="hook">Running a professional team as a consumer brand &mdash; fans, sponsors and a shop from day one.</p>
+        <span class="go" aria-hidden="true">&#8594;</span>
+      </article>
+
+      <article class="guest-row reveal d3">
+        <span class="ep-num">EP&middot;05</span>
+        <div>
+          <h3 class="name">Laura Guti&eacute;rrez</h3>
+          <p class="role"><b>Mejorset</b> &middot; Premium padel courts</p>
+          <p class="guest-links">
+            <a href="https://www.linkedin.com/in/lauraguy/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+            <a href="https://www.mejorset.com/eng" target="_blank" rel="noopener">mejorset.com &#8599;</a>
+          </p>
+        </div>
+        <p class="hook">What it takes to build the courts the sport is played on, and sell them worldwide.</p>
         <span class="go" aria-hidden="true">&#8594;</span>
       </article>
 
